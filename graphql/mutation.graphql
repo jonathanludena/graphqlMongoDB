@@ -1,0 +1,38 @@
+mutation addPerson {
+  addPerson(
+    name: "Marco"
+    phone: "123123123"
+    street: "Por que no usar require"
+    city: "Cuenca"
+  ) {
+    name
+    phone
+    address {
+      city
+      street
+    }
+    id
+  }
+}
+
+mutation editPerson {
+  editNumber(name: "Marco", phone: "456789") {
+    name
+    phone
+  }
+}
+
+mutation CreateUser($username: String!) {
+  createUser(username: $username) {
+    username
+    friends {
+      name
+    }
+  }
+}
+
+mutation Login($username: String!, $password: String!) {
+  login(username: $username, password: $password) {
+    value
+  }
+}

@@ -1,0 +1,21 @@
+query allPerson($phone: YesNo) {
+  allPersons(phone: $phone) {
+    name
+    address {
+      city
+      street
+    }
+    phone
+    id
+  }
+}
+
+query findPerson($name: String!) {
+  findPerson(name: $name) {
+    phone
+    address {
+      city
+      street
+    }
+  }
+}
